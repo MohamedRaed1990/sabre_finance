@@ -1,6 +1,6 @@
 app_name = "sabre_finance"
 app_title = "Sabre Finance"
-app_publisher = "Sabre"
+app_publisher = "Main Telecom"
 app_description = "Sabre Financial Workflow Management"
 app_email = "m.raed@cx3.me"
 app_license = "mit"
@@ -250,3 +250,10 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+fixtures = [
+    {
+        "doctype": "DocType",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]
