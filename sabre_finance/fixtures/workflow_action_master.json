@@ -1,0 +1,30 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-02-17 14:23:13.430640",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-05-16 22:44:27.183786",
+  "name": "Send for Review",
+  "workflow_action_name": "Send for Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-05-16 22:47:23.335951",
+  "name": "Claim Submitted",
+  "workflow_action_name": "Claim Submitted"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-05-16 22:48:11.919474",
+  "name": "Transfer Done",
+  "workflow_action_name": "Transfer Done"
+ }
+]

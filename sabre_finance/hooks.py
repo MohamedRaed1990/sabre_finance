@@ -257,3 +257,22 @@ fixtures = [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Workflow",
+        "filters": [["document_type", "=", "Payment Tracking"]]
+    },
+    {
+        "doctype": "Workflow State",
+        "filters": [["name", "in", ["Draft", "Pending Account Manager Review", "Pending Neveen Review", "Pending Agency Claim", "Pending Finance Review", "Approved", "Rejected"]]]
+    },
+    {
+        "doctype": "Workflow Action Master",
+        "filters": [["name", "in", ["Send for Review", "Approve", "Claim Submitted", "Transfer Done"]]]
+    },
+    {
+        "doctype": "Role",
+        "filters": [["name", "in", ["Sabre Finance", "Sabre Account Manager", "Sabre Finance Manager"]]]
+    }
+]
