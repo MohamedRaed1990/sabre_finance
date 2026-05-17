@@ -276,3 +276,10 @@ fixtures += [
         "filters": [["name", "in", ["Sabre Finance", "Sabre Account Manager", "Sabre Finance Manager"]]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Notification",
+        "filters": [["document_type", "=", "Payment Tracking"]]
+    }
+]
