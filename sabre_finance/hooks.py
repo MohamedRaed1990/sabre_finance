@@ -290,3 +290,10 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Custom DocPerm",
+        "filters": [["parent", "in", ["Agency Contract", "Segment Report", "Booking Measurement", "Payment Tracking", "Frontline Incentive"]]]
+    }
+]
