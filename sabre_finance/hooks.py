@@ -283,3 +283,10 @@ fixtures += [
         "filters": [["document_type", "=", "Payment Tracking"]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Server Script",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]
