@@ -297,3 +297,10 @@ fixtures += [
         "filters": [["parent", "in", ["Agency Contract", "Segment Report", "Booking Measurement", "Payment Tracking", "Frontline Incentive"]]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Client Script",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]

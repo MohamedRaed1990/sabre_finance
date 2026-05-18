@@ -7,7 +7,7 @@
   "allow_guest_to_view": 0,
   "allow_import": 0,
   "allow_rename": 1,
-  "autoname": null,
+  "autoname": "field:pcc_code",
   "beta": 0,
   "color": null,
   "custom": 1,
@@ -150,7 +150,7 @@
     "sort_options": 0,
     "sticky": 0,
     "translatable": 0,
-    "unique": 0,
+    "unique": 1,
     "width": null
    },
    {
@@ -1148,10 +1148,10 @@
   "make_attachments_public": 0,
   "max_attachments": 0,
   "migration_hash": "826c5e754637266f248c7e4fa750cfee",
-  "modified": "2026-05-17 11:31:04.534157",
+  "modified": "2026-05-18 02:51:59.691312",
   "module": "Sabre Finance",
   "name": "Agency Contract",
-  "naming_rule": "",
+  "naming_rule": "By fieldname",
   "nsm_parent_field": null,
   "permissions": [
    {
@@ -1572,7 +1572,7 @@
   "make_attachments_public": 0,
   "max_attachments": 0,
   "migration_hash": "826c5e754637266f248c7e4fa750cfee",
-  "modified": "2026-05-17 11:31:04.652971",
+  "modified": "2026-05-18 02:51:59.600629",
   "module": "Sabre Finance",
   "name": "Contract Incentive Tier",
   "naming_rule": "",
@@ -2882,7 +2882,7 @@
   "allow_guest_to_view": 0,
   "allow_import": 0,
   "allow_rename": 1,
-  "autoname": "",
+  "autoname": "BM-.YYYY.-.MM.-.#####",
   "beta": 0,
   "color": null,
   "custom": 1,
@@ -4543,10 +4543,10 @@
   "make_attachments_public": 0,
   "max_attachments": 0,
   "migration_hash": "826c5e754637266f248c7e4fa750cfee",
-  "modified": "2026-05-17 11:31:04.979841",
+  "modified": "2026-05-18 01:59:47.933054",
   "module": "Sabre Finance",
   "name": "Booking Measurement",
-  "naming_rule": "",
+  "naming_rule": "Expression",
   "nsm_parent_field": null,
   "permissions": [
    {
@@ -4606,7 +4606,7 @@
   "allow_guest_to_view": 0,
   "allow_import": 0,
   "allow_rename": 1,
-  "autoname": null,
+  "autoname": "PT-.YYYY.-.MM.-.#####",
   "beta": 0,
   "color": null,
   "custom": 1,
@@ -5747,10 +5747,10 @@
   "make_attachments_public": 0,
   "max_attachments": 0,
   "migration_hash": "826c5e754637266f248c7e4fa750cfee",
-  "modified": "2026-05-17 11:31:05.134249",
+  "modified": "2026-05-18 02:23:39.533650",
   "module": "Sabre Finance",
   "name": "Payment Tracking",
-  "naming_rule": "",
+  "naming_rule": "Expression",
   "nsm_parent_field": null,
   "permissions": [
    {

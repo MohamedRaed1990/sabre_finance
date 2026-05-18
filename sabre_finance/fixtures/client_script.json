@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Segment Report",
+  "enabled": 1,
+  "modified": "2026-05-18 01:35:04.821039",
+  "module": "Sabre Finance",
+  "name": "Auto Fill Segment Report",
+  "script": "frappe.ui.form.on('Segment Report', {\r\n    agency: function(frm) {\r\n        if (frm.doc.agency) {\r\n            frappe.db.get_doc('Agency Contract', frm.doc.agency)\r\n            .then(function(contract) {\r\n                frm.set_value('agency_name', contract.agency_name);\r\n                frm.set_value('account_manager', contract.account_manager);\r\n            });\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Booking Measurement",
+  "enabled": 1,
+  "modified": "2026-05-18 01:46:32.661682",
+  "module": "Sabre Finance",
+  "name": "Auto Fill Booking Measurement",
+  "script": "frappe.ui.form.on('Booking Measurement', {\r\n    agency_contract: function(frm) {\r\n        if (frm.doc.agency_contract) {\r\n            frappe.db.get_doc('Agency Contract', frm.doc.agency_contract)\r\n            .then(function(contract) {\r\n                frm.set_value('agency_name', contract.agency_name);\r\n                frm.set_value('account_manager', contract.account_manager);\r\n                frm.set_value('contract', contract.contract);\r\n            });\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Payment Tracking",
+  "enabled": 1,
+  "modified": "2026-05-18 02:19:30.667318",
+  "module": "Sabre Finance",
+  "name": "Auto Fill Payment Tracking",
+  "script": "frappe.ui.form.on('Payment Tracking', {\r\n    agency_contract: function(frm) {\r\n        if (frm.doc.agency_contract) {\r\n            frappe.db.get_doc('Agency Contract', frm.doc.agency_contract)\r\n            .then(function(contract) {\r\n                frm.set_value('agency_name', contract.agency_name);\r\n                frm.set_value('account_manager', contract.account_manager);\r\n            });\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ }
+]
