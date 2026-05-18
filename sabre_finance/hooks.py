@@ -304,3 +304,18 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Dashboard",
+        "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "doctype": "Number Card",
+        "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "doctype": "Dashboard Chart",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]
