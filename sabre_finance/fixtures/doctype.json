@@ -5810,7 +5810,7 @@
   "allow_guest_to_view": 0,
   "allow_import": 0,
   "allow_rename": 1,
-  "autoname": null,
+  "autoname": "FI-.YYYY.-.Q-.#####",
   "beta": 0,
   "color": null,
   "custom": 1,
@@ -7016,10 +7016,10 @@
   "make_attachments_public": 0,
   "max_attachments": 0,
   "migration_hash": "826c5e754637266f248c7e4fa750cfee",
-  "modified": "2026-05-18 09:49:21.654724",
+  "modified": "2026-05-18 10:57:56.160753",
   "module": "Sabre Finance",
   "name": "Frontline Incentive",
-  "naming_rule": "",
+  "naming_rule": "Expression",
   "nsm_parent_field": null,
   "permissions": [
    {

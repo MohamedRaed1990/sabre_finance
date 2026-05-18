@@ -5,13 +5,13 @@
   "document_type": "Payment Tracking",
   "enable_action_confirmation": 0,
   "is_active": 1,
-  "modified": "2026-05-18 02:29:14.350140",
+  "modified": "2026-05-18 10:27:54.737761",
   "name": "Payment Tracking Workflow",
   "override_status": 0,
   "send_email_alert": 1,
   "states": [
    {
-    "allow_edit": "System Manager",
+    "allow_edit": "Sabre Finance",
     "avoid_status_override": 0,
     "doc_status": "0",
     "evaluate_as_expression": 0,
@@ -34,8 +34,8 @@
     "next_action_email_template": null,
     "send_email": 1,
     "state": "Pending Account Manager Review",
-    "update_field": null,
-    "update_value": null,
+    "update_field": "market_share",
+    "update_value": "Done",
     "workflow_builder_id": null
    },
    {
@@ -48,8 +48,8 @@
     "next_action_email_template": null,
     "send_email": 1,
     "state": "Pending Neveen Review",
-    "update_field": null,
-    "update_value": null,
+    "update_field": "account_manager_revision",
+    "update_value": "Done",
     "workflow_builder_id": null
    },
    {
@@ -62,8 +62,8 @@
     "next_action_email_template": null,
     "send_email": 1,
     "state": "Pending Agency Claim",
-    "update_field": null,
-    "update_value": null,
+    "update_field": "ms_neveen_revision",
+    "update_value": "Done",
     "workflow_builder_id": null
    },
    {
@@ -76,8 +76,8 @@
     "next_action_email_template": null,
     "send_email": 1,
     "state": "Pending Finance Review",
-    "update_field": null,
-    "update_value": null,
+    "update_field": "customer_claim",
+    "update_value": "Done",
     "workflow_builder_id": null
    },
    {
@@ -90,8 +90,8 @@
     "next_action_email_template": null,
     "send_email": 1,
     "state": "Approved",
-    "update_field": null,
-    "update_value": null,
+    "update_field": "bank_transfer",
+    "update_value": "Done",
     "workflow_builder_id": null
    },
    {
