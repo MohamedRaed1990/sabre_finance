@@ -319,3 +319,10 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+
+fixtures += [
+    {
+        "doctype": "Print Format",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]
