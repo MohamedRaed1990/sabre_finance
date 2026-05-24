@@ -326,3 +326,9 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+fixtures += [
+    {
+        "doctype": "Workspace",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]

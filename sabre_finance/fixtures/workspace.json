@@ -1,0 +1,236 @@
+[
+ {
+  "app": "sabre_finance",
+  "charts": [
+   {
+    "chart_name": "Monthly Payments",
+    "label": "Monthly Payments"
+   }
+  ],
+  "content": "[{\"id\":\"7OqxtjCko7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Sabre Finance1 workspace</span>\",\"col\":12}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"a-qz0JD6NF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Segment Report\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}},{\"id\":\"_lYmf9iAbx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency\",\"col\":6}},{\"id\":\"An-ZRrWuyT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zoho Import\",\"col\":6}},{\"id\":\"I2nOyJVl2A\",\"type\":\"paragraph\",\"data\":{\"text\":\"Totals\",\"col\":12}},{\"id\":\"qSszSIRU8W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Contracts\",\"col\":4}},{\"id\":\"4RY4qqd59k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments\",\"col\":4}},{\"id\":\"tcEcYEIIo2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incentives\",\"col\":4}},{\"id\":\"hQSKq4P-2Z\",\"type\":\"paragraph\",\"data\":{\"text\":\"Chart\",\"col\":12}},{\"id\":\"4ny5tmvAXD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Payments\",\"col\":12}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "external_link": null,
+  "for_user": null,
+  "hide_custom": 0,
+  "icon": "accounting",
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Sabre Finance1",
+  "link_to": null,
+  "link_type": "DocType",
+  "links": [
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Agency Contract",
+    "link_count": 0,
+    "link_to": "Agency Contract",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "report_ref_doctype": null,
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Segment Report",
+    "link_count": 0,
+    "link_to": "Segment Report",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "report_ref_doctype": null,
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Booking Measurement",
+    "link_count": 0,
+    "link_to": "Booking Measurement",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "report_ref_doctype": null,
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Payment Tracking",
+    "link_count": 0,
+    "link_to": "Payment Tracking",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "report_ref_doctype": null,
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Frontline Incentive",
+    "link_count": 0,
+    "link_to": "Frontline Incentive",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "report_ref_doctype": null,
+    "type": "Link"
+   }
+  ],
+  "modified": "2026-05-24 11:02:59.489468",
+  "module": "Sabre Finance",
+  "name": "Sabre Finance1",
+  "number_cards": [
+   {
+    "label": "Total Contracts",
+    "number_card_name": "Total Contracts"
+   },
+   {
+    "label": "Total Payments",
+    "number_card_name": "Total Payments"
+   },
+   {
+    "label": "Total Incentives",
+    "number_card_name": "Total Incentives"
+   }
+  ],
+  "parent_page": null,
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "role": "Sabre Finance"
+   },
+   {
+    "role": "Sabre Account Manager"
+   },
+   {
+    "role": "Sabre Finance Manager"
+   }
+  ],
+  "sequence_id": 0.0,
+  "shortcuts": [
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Agency Contract",
+    "link_to": "Agency Contract",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Booking Measurement",
+    "link_to": "Booking Measurement",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Segment Report",
+    "link_to": "Segment Report",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Payment Tracking",
+    "link_to": "Payment Tracking",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Frontline Incentive",
+    "link_to": "Frontline Incentive",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Red",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Agency",
+    "link_to": "Agency",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Red",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Zoho Import",
+    "link_to": "Zoho Import",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Sabre Finance1",
+  "type": "Workspace"
+ }
+]
