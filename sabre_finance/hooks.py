@@ -332,3 +332,4 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+after_migrate = ["sabre_finance.setup.import_workspace"]
