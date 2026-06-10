@@ -7,7 +7,7 @@
     "label": "Monthly Payments"
    }
   ],
-  "content": "[{\"id\":\"7OqxtjCko7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Sabre Finance1 workspace</span>\",\"col\":12}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"a-qz0JD6NF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Segment Report\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}},{\"id\":\"_lYmf9iAbx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency\",\"col\":6}},{\"id\":\"An-ZRrWuyT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zoho Import\",\"col\":6}},{\"id\":\"I2nOyJVl2A\",\"type\":\"paragraph\",\"data\":{\"text\":\"Totals\",\"col\":12}},{\"id\":\"qSszSIRU8W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Contracts\",\"col\":4}},{\"id\":\"4RY4qqd59k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments\",\"col\":4}},{\"id\":\"tcEcYEIIo2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incentives\",\"col\":4}},{\"id\":\"hQSKq4P-2Z\",\"type\":\"paragraph\",\"data\":{\"text\":\"Chart\",\"col\":12}},{\"id\":\"4ny5tmvAXD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Payments\",\"col\":12}}]",
+  "content": "[{\"id\":\"4ny5tmvAXD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Payments\",\"col\":12}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"a-qz0JD6NF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Segment Report\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}},{\"id\":\"_lYmf9iAbx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency\",\"col\":6}},{\"id\":\"An-ZRrWuyT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zoho Import\",\"col\":6}},{\"id\":\"qSszSIRU8W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Contracts\",\"col\":4}},{\"id\":\"4RY4qqd59k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments\",\"col\":4}},{\"id\":\"tcEcYEIIo2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incentives\",\"col\":4}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -97,7 +97,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2026-05-24 11:02:59.489468",
+  "modified": "2026-06-10 12:34:57.799111",
   "module": "Sabre Finance",
   "name": "Sabre Finance",
   "number_cards": [
