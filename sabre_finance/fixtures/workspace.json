@@ -17,7 +17,7 @@
   "icon": "accounting",
   "indicator_color": "green",
   "is_hidden": 0,
-  "label": "Sabre Finance1",
+  "label": "Sabre Finance",
   "link_to": null,
   "link_type": "DocType",
   "links": [
@@ -99,7 +99,7 @@
   ],
   "modified": "2026-05-24 11:02:59.489468",
   "module": "Sabre Finance",
-  "name": "Sabre Finance1",
+  "name": "Sabre Finance",
   "number_cards": [
    {
     "label": "Total Contracts",
@@ -230,7 +230,7 @@
     "url": null
    }
   ],
-  "title": "Sabre Finance1",
+  "title": "Sabre Finance",
   "type": "Workspace"
  }
 ]
