@@ -330,6 +330,10 @@ fixtures += [
     {
         "doctype": "Workspace",
         "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "doctype": "Workspace Sidebar",
+        "filters": [["app", "=", "sabre_sales"]]
     }
 ]
 after_migrate = ["sabre_finance.setup.import_workspace"]
