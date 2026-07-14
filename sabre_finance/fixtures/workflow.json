@@ -5,13 +5,13 @@
   "document_type": "Payment Tracking",
   "enable_action_confirmation": 0,
   "is_active": 1,
-  "modified": "2026-05-18 10:27:54.737761",
+  "modified": "2026-07-13 13:50:25.698376",
   "name": "Payment Tracking Workflow",
   "override_status": 0,
   "send_email_alert": 1,
   "states": [
    {
-    "allow_edit": "Sabre Finance",
+    "allow_edit": "Sabre Finance Manager",
     "avoid_status_override": 0,
     "doc_status": "0",
     "evaluate_as_expression": 0,
@@ -39,7 +39,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Sabre Finance Manager",
+    "allow_edit": "Sabre Head Of Sales",
     "avoid_status_override": 0,
     "doc_status": "0",
     "evaluate_as_expression": 0,
@@ -67,7 +67,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Sabre Finance",
+    "allow_edit": "Sabre Finance Manager",
     "avoid_status_override": 0,
     "doc_status": "0",
     "evaluate_as_expression": 0,
@@ -93,27 +93,13 @@
     "update_field": "bank_transfer",
     "update_value": "Done",
     "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "Sabre Finance Manager",
-    "avoid_status_override": 0,
-    "doc_status": "2",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Rejected",
-    "update_field": null,
-    "update_value": null,
-    "workflow_builder_id": null
    }
   ],
   "transitions": [
    {
     "action": "Send for Review",
     "allow_self_approval": 1,
-    "allowed": "Sabre Finance",
+    "allowed": "Sabre Finance Manager",
     "condition": null,
     "next_state": "Pending Account Manager Review",
     "send_email_to_creator": 0,
@@ -135,7 +121,7 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Sabre Finance Manager",
+    "allowed": "Sabre Head Of Sales",
     "condition": null,
     "next_state": "Pending Agency Claim",
     "send_email_to_creator": 0,
@@ -157,7 +143,7 @@
    {
     "action": "Transfer Done",
     "allow_self_approval": 1,
-    "allowed": "Sabre Finance",
+    "allowed": "Sabre Finance Manager",
     "condition": null,
     "next_state": "Approved",
     "send_email_to_creator": 0,

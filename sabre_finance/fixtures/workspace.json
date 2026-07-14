@@ -97,7 +97,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2026-07-08 21:33:44.523373",
+  "modified": "2026-07-13 13:39:32.019354",
   "module": "Sabre Finance",
   "name": "Sabre Finance",
   "number_cards": [
@@ -127,6 +127,9 @@
    },
    {
     "role": "Sabre Finance Manager"
+   },
+   {
+    "role": "Sabre Head Of Sales"
    }
   ],
   "sequence_id": 0.0,

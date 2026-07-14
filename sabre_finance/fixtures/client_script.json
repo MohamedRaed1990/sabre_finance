@@ -26,10 +26,10 @@
   "doctype": "Client Script",
   "dt": "Payment Tracking",
   "enabled": 1,
-  "modified": "2026-05-18 02:19:30.667318",
+  "modified": "2026-07-13 16:44:00.458589",
   "module": "Sabre Finance",
   "name": "Auto Fill Payment Tracking",
-  "script": "frappe.ui.form.on('Payment Tracking', {\r\n    agency_contract: function(frm) {\r\n        if (frm.doc.agency_contract) {\r\n            frappe.db.get_doc('Agency Contract', frm.doc.agency_contract)\r\n            .then(function(contract) {\r\n                frm.set_value('agency_name', contract.agency_name);\r\n                frm.set_value('account_manager', contract.account_manager);\r\n            });\r\n        }\r\n    }\r\n});",
+  "script": "frappe.ui.form.on('Payment Tracking', {\n    refresh: function(frm) {\n        frm.set_query('agency_contract', function() {\n            return {};\n        });\n    },\n    agency_contract: function(frm) {\n        if (frm.doc.agency_contract) {\n            frappe.db.get_doc('Agency Contract', frm.doc.agency_contract)\n            .then(function(contract) {\n                frm.set_value('agency_name', contract.agency_name);\n                frm.set_value('account_manager', contract.account_manager);\n            });\n        }\n    }\n});",
   "view": "Form"
  },
  {
@@ -52,6 +52,17 @@
   "module": "Sabre Finance",
   "name": "Import File From Zoho",
   "script": "frappe.ui.form.on('Zoho Import', {\r\n\r\n    refresh(frm) {\r\n\r\n        // ── زر Process Import ─────────────────────────────────────\r\n        if (frm.doc.import_file && frm.doc.status !== 'Processing') {\r\n            frm.add_custom_button(__('⚙️ Process Import'), () => {\r\n\r\n                frappe.confirm(\r\n                    __('سيقوم هذا الإجراء بقراءة الملف المرفق وإنشاء/تحديث سجلات Agency. هل تريد المتابعة؟'),\r\n                    () => {\r\n                        frappe.call({\r\n                            method: 'sabre_finance.sabre_finance.api.process_zoho_import',\r\n                            args:   { docname: frm.doc.name },\r\n                            freeze: true,\r\n                            freeze_message: __('⏳ جاري معالجة الملف، الرجاء الانتظار...'),\r\n                            callback(r) {\r\n                                if (r.message && r.message.status === 'success') {\r\n                                    const m = r.message;\r\n                                    frappe.msgprint({\r\n                                        title:     __('✅ اكتملت عملية الاستيراد'),\r\n                                        indicator: m.errors > 0 ? 'orange' : 'green',\r\n                                        message: `\r\n                                            <table class=\"table table-bordered\" style=\"margin-top:8px\">\r\n                                                <tr><td><b>الصفوف المعالجة</b></td><td>${m.imported}</td></tr>\r\n                                                <tr><td><b>وكالات جديدة</b></td><td>${m.new}</td></tr>\r\n                                                <tr><td><b>سجلات محدّثة</b></td><td>${m.updated}</td></tr>\r\n                                                <tr><td><b>صفوف متخطاة</b></td><td>${m.skipped}</td></tr>\r\n                                                <tr><td><b>أخطاء</b></td><td>${m.errors}</td></tr>\r\n                                            </table>\r\n                                        `,\r\n                                    });\r\n                                    frm.reload_doc();\r\n                                }\r\n                            },\r\n                        });\r\n                    }\r\n                );\r\n            }, __('Actions'));\r\n        }\r\n\r\n        // ── لون مؤشر الحالة ──────────────────────────────────────\r\n        const colors = {\r\n            'Draft':                  'gray',\r\n            'Processing':             'orange',\r\n            'Completed':              'green',\r\n            'Completed with Errors':  'yellow',\r\n            'Failed':                 'red',\r\n        };\r\n        if (frm.doc.status) {\r\n            frm.page.set_indicator(frm.doc.status, colors[frm.doc.status] || 'blue');\r\n        }\r\n    },\r\n\r\n    // ── إعادة تهيئة الحقول عند إرفاق ملف جديد ──────────────────\r\n    import_file(frm) {\r\n        frm.set_value('status',        'Draft');\r\n        frm.set_value('imported_rows', 0);\r\n        frm.set_value('new_agencies',  0);\r\n        frm.set_value('error_log',     '');\r\n        frm.save();\r\n    },\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Agency Contract",
+  "enabled": 1,
+  "modified": "2026-07-14 10:00:30.745286",
+  "module": "Sabre Finance",
+  "name": "Making Agency Contract fields read-only for Finance.",
+  "script": "frappe.ui.form.on('Agency Contract', {\n    refresh: function(frm) {\n        if (frappe.user_roles.includes('Sabre Finance Manager')) {\n            \n            let all_fields = [\n                'pcc_code', 'agency_name', 'email', 'iata_number',\n                'contract', 'account_manager', 'start_date', 'end_date',\n                'term_months', 'payment_cycle', 'due_date', 'tiers'\n            ];\n            \n            all_fields.forEach(function(field) {\n                frm.set_df_property(field, 'read_only', 1);\n            });\n            \n            frm.set_df_property('tiers', 'cannot_add_rows', true);\n            frm.set_df_property('tiers', 'cannot_delete_rows', true);\n        }\n    }\n});",
   "view": "Form"
  }
 ]
