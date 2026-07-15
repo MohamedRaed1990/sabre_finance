@@ -1,0 +1,71 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "year",
+    "fieldtype": "Data",
+    "label": "Year",
+    "mandatory": 0,
+    "options": null,
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "month",
+    "fieldtype": "Select",
+    "label": "Month",
+    "mandatory": 0,
+    "options": "All\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "status",
+    "fieldtype": "Select",
+    "label": "Payment Status",
+    "mandatory": 0,
+    "options": "All\nPaid\nUnpaid",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-07-16 01:09:10.385008",
+  "module": "Sabre Finance",
+  "name": "Agency Pending Payments Chart Report",
+  "prepared_report": 0,
+  "query": "SELECT \r\n    CONCAT(LEFT(MONTHNAME(child.payment_due_date), 3), ' ', YEAR(child.payment_due_date)) AS \"Month:Data:120\",\r\n    parent.pcc_code AS \"PCC Code:Data:120\",\r\n    parent.agency_name AS \"Agency Name:Link/Agency Contract:220\",\r\n    child.payment_no AS \"Payment No:Data:120\",\r\n    child.payment_due_date AS \"Due Date:Date:120\",\r\n    NULL AS \"Payment Amount:Currency:120\"\r\nFROM \r\n    `tabAgency Contract Payment` child\r\nINNER JOIN \r\n    `tabAgency Contract` parent ON child.parent = parent.name\r\nWHERE \r\n    parent.docstatus < 2 \r\n    AND child.paid = 0\r\n    AND (COALESCE(%(year)s, '') = '' OR YEAR(child.payment_due_date) = %(year)s)\r\nORDER BY \r\n    child.payment_due_date ASC\r\n-- SELECT \r\n--     CONCAT(LEFT(MONTHNAME(child.payment_due_date), 3), ' ', YEAR(child.payment_due_date)) AS \"Month/Year:Data:120\",\r\n--     parent.pcc_code AS \"PCC Code:Data:120\",\r\n--     parent.agency_name AS \"Agency Name:Link/Agency Contract:220\",\r\n--     child.payment_no AS \"Payment No:Data:120\",\r\n--     child.payment_due_date AS \"Due Date:Date:120\",\r\n--     NULL AS \"Payment Amount:Currency:120\"\r\n-- FROM \r\n--     `tabAgency Contract Payment` child\r\n-- INNER JOIN \r\n--     `tabAgency Contract` parent ON child.parent = parent.name\r\n-- WHERE \r\n--     parent.docstatus < 2 \r\n--     AND child.paid = 0\r\n-- ORDER BY \r\n--     child.payment_due_date ASC\r\n\r\n-- SELECT \r\n--     DATE_FORMAT(child.payment_due_date, '%%b %%Y') AS \"Month:Data:120\",\r\n--     COUNT(child.name) AS \"Payments Count:Int:120\"\r\n-- FROM \r\n--     `tabAgency Contract Payment` child\r\n-- INNER JOIN \r\n--     `tabAgency Contract` parent ON child.parent = parent.name\r\n-- WHERE \r\n--     parent.docstatus < 2 \r\n--     AND child.paid = 0\r\n-- GROUP BY \r\n--     DATE_FORMAT(child.payment_due_date, '%%Y-%%m')\r\n-- ORDER BY \r\n--     MIN(child.payment_due_date) ASC",
+  "ref_doctype": "Agency Contract",
+  "reference_report": null,
+  "report_name": "Agency Pending Payments Chart Report",
+  "report_script": "# 1. تعريف كافة أعمدة الشيت المراد عرضها\r\ncolumns = [\r\n    {\"label\": \"Month/Year\", \"fieldname\": \"month\", \"fieldtype\": \"Data\", \"width\": 120},\r\n    {\"label\": \"PCC Code\", \"fieldname\": \"pcc_code\", \"fieldtype\": \"Data\", \"width\": 120},\r\n    {\"label\": \"Agency Name\", \"fieldname\": \"agency_name\", \"fieldtype\": \"Link\", \"options\": \"Agency Contract\", \"width\": 220},\r\n    {\"label\": \"Payment No\", \"fieldname\": \"payment_no\", \"fieldtype\": \"Data\", \"width\": 120},\r\n    {\"label\": \"Due Date\", \"fieldname\": \"due_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n    {\"label\": \"Payment Amount\", \"fieldname\": \"payment_amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    {\"label\": \"Paid\", \"fieldname\": \"status\", \"fieldtype\": \"Check\", \"width\": 100} # صندوق صح (Check)\r\n]\r\n\r\n# 2. جلب كافة الدفعات مع تفاصيل العقود الخاصة بها\r\nraw_query = \"\"\"\r\n    SELECT \r\n        child.payment_due_date,\r\n        parent.pcc_code,\r\n        parent.agency_name,\r\n        child.payment_no,\r\n        child.paid\r\n    FROM \r\n        `tabAgency Contract Payment` child\r\n    INNER JOIN \r\n        `tabAgency Contract` parent ON child.parent = parent.name\r\n    WHERE \r\n        parent.docstatus < 2 \r\n    ORDER BY \r\n        child.payment_due_date ASC\r\n\"\"\"\r\nraw_data = frappe.db.sql(raw_query, as_dict=True)\r\n\r\n# 3. قراءة الفلاتر بأمان تام من الواجهة\r\nif not filters:\r\n    filters = {}\r\n    \r\nyear_filter = filters.get(\"year\")\r\nmonth_filter = filters.get(\"month\")\r\n\r\n# تم تعديل القيمة الافتراضية هنا لتكون \"All\" ليظهر كل شيء عند فتح التقرير لأول مرة\r\npaid_filter = filters.get(\"status\") or \"All\"\r\n\r\n# قاموس ذكي لتحويل اسم الشهر المحدد في الفلتر إلى رقم الشهر المقابل\r\nmonth_map = {\r\n    \"january\": 1, \"jan\": 1,\r\n    \"february\": 2, \"feb\": 2,\r\n    \"march\": 3, \"mar\": 3,\r\n    \"april\": 4, \"apr\": 4,\r\n    \"may\": 5,\r\n    \"june\": 6, \"jun\": 6,\r\n    \"july\": 7, \"jul\": 7,\r\n    \"august\": 8, \"aug\": 8,\r\n    \"september\": 9, \"sep\": 9,\r\n    \"october\": 10, \"oct\": 10,\r\n    \"november\": 11, \"nov\": 11,\r\n    \"december\": 12, \"dec\": 12\r\n}\r\n\r\n# تحديد رقم الشهر المطلوب تصفية البيانات بناءً عليه\r\ntarget_month_num = None\r\nif month_filter and str(month_filter).strip().lower() != \"all\":\r\n    target_month_num = month_map.get(str(month_filter).strip().lower())\r\n\r\n# 4. معالجة وتصفية البيانات برمجياً عبر البايثون\r\nfinal_rows = []\r\nmonths_short = [\"\", \"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\r\n\r\nfor r in raw_data:\r\n    due_date = r.get(\"payment_due_date\")\r\n    if not due_date:\r\n        continue\r\n    \r\n    # استخراج السنة والشهر بأمان سواء كان التاريخ Object أو Text\r\n    if isinstance(due_date, str):\r\n        year_val = int(due_date.split(\"-\")[0])\r\n        month_val = int(due_date.split(\"-\")[1])\r\n    else:\r\n        year_val = due_date.year\r\n        month_val = due_date.month\r\n\r\n    # أولاً: منطق الفلترة بالسنة\r\n    if year_filter:\r\n        if str(year_val) != str(year_filter):\r\n            continue\r\n            \r\n    # ثانياً: منطق الفلترة بالشهر\r\n    if target_month_num is not None:\r\n        if month_val != target_month_num:\r\n            continue\r\n    \r\n    # ثالثاً: منطق الفلترة بحالة السداد (Paid / Unpaid)\r\n    is_paid_db = r.get(\"paid\")\r\n    \r\n    # إذا تم اختيار فلتر \"Unpaid\" تخطى المدفوع\r\n    if paid_filter == \"Unpaid\" and is_paid_db != 0:\r\n        continue\r\n    # إذا تم اختيار فلتر \"Paid\" تخطى غير المدفوع\r\n    elif paid_filter == \"Paid\" and is_paid_db != 1:\r\n        continue\r\n    # إذا كان \"All\" فلن يدخل في الشروط أعلاه وسيعرض الدفعة مباشرة\r\n    \r\n    # صياغة اسم الشهر المختصر والسنة للتقرير (مثل: Feb 2026)\r\n    month_name = months_short[month_val] if 1 <= month_val <= 12 else \"\"\r\n    month_str = f\"{month_name} {year_val}\"\r\n    \r\n    # تحديد قيمة الـ Checkbox (رقم 1 يعني صح، ورقم 0 يعني غير محدد)\r\n    status_check = 1 if is_paid_db == 1 else 0\r\n    \r\n    final_rows.append({\r\n        \"month\": month_str,\r\n        \"pcc_code\": r.get(\"pcc_code\"),\r\n        \"agency_name\": r.get(\"agency_name\"),\r\n        \"payment_no\": r.get(\"payment_no\"),\r\n        \"due_date\": due_date,\r\n        \"payment_amount\": \"\",  # قيمة فارغة مؤقتاً\r\n        \"status\": status_check\r\n    })\r\n\r\n# 5. إرجاع الأعمدة والصفوف إلى نظام Frappe بالشكل الذي يتوقعه تماماً\r\ndata = columns, final_rows",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "role": "Sabre Finance"
+   },
+   {
+    "role": "Sabre Account Manager"
+   },
+   {
+    "role": "Sabre Finance Manager"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Sabre Head Of Sales"
+   }
+  ],
+  "timeout": 0
+ }
+]

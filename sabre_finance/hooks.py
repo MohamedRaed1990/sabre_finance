@@ -334,6 +334,14 @@ fixtures += [
     {
         "doctype": "Workspace Sidebar",
         "filters": [["app", "=", "sabre_sales"]]
+    },
+    {
+        "dt": "Report", 
+        "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "dt": "Custom HTML Block",
+        "filters": [["name", "in", ["Chart For Payment In Month"]]]
     }
 ]
 after_migrate = ["sabre_finance.setup.import_workspace"]
