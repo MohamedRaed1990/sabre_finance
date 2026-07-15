@@ -59,10 +59,10 @@
   "doctype": "Client Script",
   "dt": "Agency Contract",
   "enabled": 1,
-  "modified": "2026-07-14 10:00:30.745286",
+  "modified": "2026-07-15 10:16:51.087520",
   "module": "Sabre Finance",
   "name": "Making Agency Contract fields read-only for Finance.",
-  "script": "frappe.ui.form.on('Agency Contract', {\n    refresh: function(frm) {\n        if (frappe.user_roles.includes('Sabre Finance Manager')) {\n            \n            let all_fields = [\n                'pcc_code', 'agency_name', 'email', 'iata_number',\n                'contract', 'account_manager', 'start_date', 'end_date',\n                'term_months', 'payment_cycle', 'due_date', 'tiers'\n            ];\n            \n            all_fields.forEach(function(field) {\n                frm.set_df_property(field, 'read_only', 1);\n            });\n            \n            frm.set_df_property('tiers', 'cannot_add_rows', true);\n            frm.set_df_property('tiers', 'cannot_delete_rows', true);\n        }\n    }\n});",
+  "script": "frappe.ui.form.on('Agency Contract', {\n    refresh: function(frm) {\n        // الشرط الجديد: يطبق فقط على الـ Finance Manager ويستثني الـ Admin ومدراء النظام\n        if (frappe.user_roles.includes('Sabre Finance Manager') && !frappe.user_roles.includes('System Manager')) {\n            \n            // 💡 ملاحظة: الحقول المكتوبة هنا سيتم قفلها (قراءة فقط).\n            // الحقول الـ 3 التي تريد السماح بتعديلها، فقط قم بحذفها من هذه القائمة:\n            let read_only_fields = [\n                'pcc_code', 'agency_name', 'email', 'iata_number',\n                'contract', 'account_manager', 'start_date', 'end_date',\n                'term_months', 'payment_cycle', 'due_date'\n            ];\n            \n            // تطبيق القفل على القائمة المختارة\n            read_only_fields.forEach(function(field) {\n                frm.set_df_property(field, 'read_only', 1);\n            });\n            \n            // التحكم في جدول الـ tiers (منع الإضافة والحذف)\n            frm.set_df_property('tiers', 'cannot_add_rows', true);\n            frm.set_df_property('tiers', 'cannot_delete_rows', true);\n        }\n    }\n});",
   "view": "Form"
  }
 ]
