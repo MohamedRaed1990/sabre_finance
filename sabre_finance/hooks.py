@@ -345,3 +345,14 @@ fixtures += [
     }
 ]
 after_migrate = ["sabre_finance.setup.import_workspace"]
+
+fixtures += [
+    {
+        "dt": "Custom Field",
+        "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [["module", "=", "Sabre Finance"]]
+    }
+]
