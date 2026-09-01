@@ -2,8 +2,12 @@
  {
   "app": "sabre_finance",
   "charts": [],
-  "content": "[{\"id\":\"r3UydiqNcc\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Chart For Payment In Month\",\"col\":12}},{\"id\":\"2K5rjhpovy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Import\",\"col\":4}},{\"id\":\"SEkgYveAV2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Data\",\"col\":4}},{\"id\":\"3ogzyoJVLq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Import\",\"col\":4}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"a-qz0JD6NF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Segment Report\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}},{\"id\":\"_lYmf9iAbx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency\",\"col\":6}},{\"id\":\"An-ZRrWuyT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Zoho Import\",\"col\":6}},{\"id\":\"qSszSIRU8W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Contracts\",\"col\":4}},{\"id\":\"4RY4qqd59k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments\",\"col\":4}},{\"id\":\"tcEcYEIIo2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incentives\",\"col\":4}}]",
+  "content": "[{\"id\":\"r3UydiqNcc\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Chart For Payment In Month\",\"col\":12}},{\"id\":\"v4T3aP1QOZ\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Chart For Frontline In Month\",\"col\":12}},{\"id\":\"2K5rjhpovy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Import\",\"col\":4}},{\"id\":\"hwEqAqCwD6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Import\",\"col\":4}},{\"id\":\"-s-bR3R3yp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Import\",\"col\":4}},{\"id\":\"SEkgYveAV2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Data\",\"col\":4}},{\"id\":\"hXscKMhcX0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Data\",\"col\":4}},{\"id\":\"a2mBNpSbm2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Data\",\"col\":4}},{\"id\":\"Vava4tHjLl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Vs Sabre\",\"col\":5}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}}]",
   "custom_blocks": [
+   {
+    "custom_block_name": "Chart For Frontline In Month",
+    "label": "Chart For Frontline In Month"
+   },
    {
     "custom_block_name": "Chart For Payment In Month",
     "label": "Chart For Payment In Month"
@@ -97,23 +101,10 @@
     "type": "Link"
    }
   ],
-  "modified": "2026-07-30 16:38:01.976651",
+  "modified": "2026-08-25 14:00:19.437752",
   "module": "Sabre Finance",
   "name": "Sabre Finance",
-  "number_cards": [
-   {
-    "label": "Total Contracts",
-    "number_card_name": "Total Contracts"
-   },
-   {
-    "label": "Total Payments",
-    "number_card_name": "Total Payments"
-   },
-   {
-    "label": "Total Incentives",
-    "number_card_name": "Total Incentives"
-   }
-  ],
+  "number_cards": [],
   "parent_page": null,
   "public": 1,
   "quick_lists": [],
@@ -135,6 +126,20 @@
   "sequence_id": 0.0,
   "shortcuts": [
    {
+    "color": "Red",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Midt Import",
+    "link_to": "MIDT Import",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
     "color": "Blue",
     "doc_view": "List",
     "format": null,
@@ -142,6 +147,34 @@
     "kanban_board": null,
     "label": "Agency Contract",
     "link_to": "Agency Contract",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Yellow",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Todd Vs Sabre",
+    "link_to": "Todd VS Sabre",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Red",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Midt Data",
+    "link_to": "MIDT Data",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": "[]",
@@ -168,8 +201,36 @@
     "format": null,
     "icon": null,
     "kanban_board": null,
+    "label": "Sabre Central Segments Import",
+    "link_to": "Sabre Central Segments Import",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
     "label": "Booking Measurement",
     "link_to": "Booking Measurement",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Blue",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Sabre Central Segments Data",
+    "link_to": "Sabre Central Segments Data",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": "[]",
@@ -184,20 +245,6 @@
     "kanban_board": null,
     "label": "Todd Report Import",
     "link_to": "Todd Report Import",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": "[]",
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": "Blue",
-    "doc_view": "List",
-    "format": null,
-    "icon": null,
-    "kanban_board": null,
-    "label": "Segment Report",
-    "link_to": "Segment Report",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": "[]",
@@ -226,34 +273,6 @@
     "kanban_board": null,
     "label": "Frontline Incentive",
     "link_to": "Frontline Incentive",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": "[]",
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": "Red",
-    "doc_view": "List",
-    "format": null,
-    "icon": null,
-    "kanban_board": null,
-    "label": "Agency",
-    "link_to": "Agency",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": "[]",
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": "Red",
-    "doc_view": "List",
-    "format": null,
-    "icon": null,
-    "kanban_board": null,
-    "label": "Zoho Import",
-    "link_to": "Zoho Import",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": "[]",

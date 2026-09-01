@@ -288,6 +288,14 @@ fixtures += [
     {
         "doctype": "Server Script",
         "filters": [["module", "=", "Sabre Finance"]]
+    },
+    {
+        "doctype": "Server Script",
+        "filters": [["name", "in", [
+            "Generate Measurement Calculation",
+            "Generate Payment Schedule",
+            "Auto Calculate Term and Payment Schedule"
+        ]]]
     }
 ]
 
@@ -333,14 +341,14 @@ fixtures += [
     },
     {
         "doctype": "Workspace Sidebar",
-        "filters": [["app", "=", "sabre_sales"]]
+        "filters": [["app", "=", "sabre_finance"]]
     },
     {
-        "dt": "Report", 
+        "doctype": "Report", 
         "filters": [["module", "=", "Sabre Finance"]]
     },
     {
-        "dt": "Custom HTML Block",
+        "doctype": "Custom HTML Block",
         "filters": [["name", "in", ["Chart For Payment In Month"]]]
     }
 ]
@@ -348,11 +356,11 @@ after_migrate = ["sabre_finance.setup.import_workspace"]
 
 fixtures += [
     {
-        "dt": "Custom Field",
+        "doctype": "Custom Field",
         "filters": [["module", "=", "Sabre Finance"]]
     },
     {
-        "dt": "Property Setter",
+        "doctype": "Property Setter",
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
