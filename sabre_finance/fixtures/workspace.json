@@ -2,15 +2,11 @@
  {
   "app": "sabre_finance",
   "charts": [],
-  "content": "[{\"id\":\"r3UydiqNcc\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Chart For Payment In Month\",\"col\":12}},{\"id\":\"v4T3aP1QOZ\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Chart For Frontline In Month\",\"col\":12}},{\"id\":\"2K5rjhpovy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Import\",\"col\":4}},{\"id\":\"hwEqAqCwD6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Import\",\"col\":4}},{\"id\":\"-s-bR3R3yp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Import\",\"col\":4}},{\"id\":\"SEkgYveAV2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Data\",\"col\":4}},{\"id\":\"hXscKMhcX0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Data\",\"col\":4}},{\"id\":\"a2mBNpSbm2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Data\",\"col\":4}},{\"id\":\"Vava4tHjLl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Vs Sabre\",\"col\":5}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}}]",
+  "content": "[{\"id\":\"8lAbS4gD_X\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Pending Payments Dashboard\",\"col\":12}},{\"id\":\"2K5rjhpovy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Import\",\"col\":4}},{\"id\":\"hwEqAqCwD6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Import\",\"col\":4}},{\"id\":\"-s-bR3R3yp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Import\",\"col\":4}},{\"id\":\"SEkgYveAV2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Report Data\",\"col\":4}},{\"id\":\"hXscKMhcX0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sabre Central Segments Data\",\"col\":4}},{\"id\":\"a2mBNpSbm2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Midt Data\",\"col\":4}},{\"id\":\"Vava4tHjLl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Todd Vs Sabre\",\"col\":4}},{\"id\":\"N-chIqvjxR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Contract\",\"col\":4}},{\"id\":\"ocH4w1Tgkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Booking Measurement\",\"col\":4}},{\"id\":\"Lze61j4lGm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Tracking\",\"col\":6}},{\"id\":\"dsfdw8n4nu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frontline Incentive\",\"col\":6}}]",
   "custom_blocks": [
    {
-    "custom_block_name": "Chart For Frontline In Month",
-    "label": "Chart For Frontline In Month"
-   },
-   {
-    "custom_block_name": "Chart For Payment In Month",
-    "label": "Chart For Payment In Month"
+    "custom_block_name": "Pending Payments Dashboard",
+    "label": "Pending Payments Dashboard"
    }
   ],
   "docstatus": 0,
@@ -101,7 +97,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2026-08-25 14:00:19.437752",
+  "modified": "2026-09-17 10:16:27.426080",
   "module": "Sabre Finance",
   "name": "Sabre Finance",
   "number_cards": [],
@@ -121,6 +117,12 @@
    },
    {
     "role": "Sabre Head Of Sales"
+   },
+   {
+    "role": "Sabre Finance Viewer"
+   },
+   {
+    "role": "Sabre Finance Viewer"
    }
   ],
   "sequence_id": 0.0,

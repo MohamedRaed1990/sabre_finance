@@ -349,11 +349,9 @@ fixtures += [
     },
     {
         "doctype": "Custom HTML Block",
-        "filters": [["name", "in", ["Chart For Payment In Month"]]]
+        "filters": [["name", "in", ["Chart For Payment In Month", "Chart For Frontline In Month"]]]
     }
 ]
-after_migrate = ["sabre_finance.setup.import_workspace"]
-
 fixtures += [
     {
         "doctype": "Custom Field",
@@ -364,3 +362,4 @@ fixtures += [
         "filters": [["module", "=", "Sabre Finance"]]
     }
 ]
+after_migrate = ["sabre_finance.setup.import_workspace"]
